@@ -8,7 +8,7 @@ pipeline{
                 }
         
         stage ('checking-branch') {
-                steps {
+ 
                         if (env.BRANCH_NAME == 'main'){
                                 echo "Runs on master branch"
                         }
@@ -16,8 +16,6 @@ pipeline{
                                 echo "run on someother branch"
                         }
                 }
-        }
-
 
         stage('artifact uploading') {
             steps{
