@@ -9,7 +9,7 @@ pipeline{
         }
         stage ('checking-branch') {
                 steps {
-                        if (env.BRANCH_NAME == 'master'){
+                        if (env.BRANCH_NAME == 'main'){
                                 echo "Runs on master branch"
                         }
                         else {
