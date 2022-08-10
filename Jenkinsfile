@@ -6,7 +6,7 @@ pipeline{
                         sh 'mvn clean package '
                              }
                 }
-        }
+        
         stage ('checking-branch') {
                 steps {
                         if (env.BRANCH_NAME == 'main'){
