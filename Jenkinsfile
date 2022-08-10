@@ -7,15 +7,19 @@ pipeline{
                              }
                 }
         
-        stage ('checking-branch') {
- 
+      		  stage('checking-branch') {
+			steps { 
+				script { 
                         if (env.BRANCH_NAME == 'main'){
                                 echo "Runs on master branch"
-                        }
+                       				      }			
                         else {
                                 echo "run on someother branch"
-                        }
-                }
+                       	     }
+                			}
+
+			}
+		}
 
         stage('artifact uploading') {
             steps{
@@ -32,7 +36,6 @@ pipeline{
                         groupId: 'org.springframework',
                         nexusUrl: '172.31.33.156:8081',
                         nexusVersion: 'nexus3',
-
                         protocol: 'http',
                         repository: 'CR1-1',
                         version: '0.2.0'
